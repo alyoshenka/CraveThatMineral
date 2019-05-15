@@ -4,24 +4,40 @@ using UnityEngine;
 
 public class LevelGenerator : MonoBehaviour {
 
+    [Tooltip("Player Game Object")]
     public Transform player;
-    public int tunnelLength;
+    [Tooltip("The base wall prefab")]
     public GameObject wall;
+    [Tooltip("The number of times the base wall prefab repeats")]
+    public int tunnelLength;
+    [Tooltip("Z dimension width - how far apart wlls instantiate")]
     public float wallDepth;
+    [Tooltip("The width for obstacles to spawn between")]
+    public float tunnelWidth;
+    [Tooltip("Enemy prefab")]
+    public GameObject enemyPrefab;
 
-    GameObject[] walls;
+    [Header("Enemies")]
+    [Tooltip("Inverse chance a tile will have an enemy")]
+    public int spawnFrequency;
+
+    Wall[] walls;
+    GameObject[] enemies;
     int wallIdx;
+    int enemyIdx;
     float currentWallZ;
-    Vector3 newPos;
-   
+    float newZ;
+    float spawnElapsed;
+    float spawnNext;
 
     // Use this for initialization
     void Start()
     {
-        walls = new GameObject[tunnelLength];
+        Wall.obj = wall;
+
+        walls = new Wall[tunnelLength];
         wallIdx = 0;
-        newPos = Vector3.zero;
-        newPos.z = (tunnelLength - 1) * wallDepth;
+        newZ = (tunnelLength - 1) * wallDepth;
        
         // init walls
         GameObject obj;
@@ -29,7 +45,7 @@ public class LevelGenerator : MonoBehaviour {
         for(int i = 0; i < tunnelLength; i++)
         {            
             obj = Instantiate(wall, pos, Quaternion.identity);
-            walls[i] = obj;
+            walls[i] = obj.GetComponent<Wall>();
             pos.z += wallDepth;
         }
 
@@ -40,21 +56,32 @@ public class LevelGenerator : MonoBehaviour {
     void Update()
     {
         if (player.position.z > currentWallZ) { WrapWalls(); }
+
     }
 
     void WrapWalls()
     {            
-        newPos.z += wallDepth;
+        newZ += wallDepth;
         currentWallZ += wallDepth;
 
-        walls[wallIdx].transform.position = newPos;
+        walls[wallIdx].Reset(newZ);
 
         wallIdx++;
         if (wallIdx >= tunnelLength) { wallIdx = 0; }
+
+        SpawnEnemy();
     }
 
-    GameObject WallPrev()
+    Wall WallPrev()
     {
         return wallIdx == 0 ? walls[tunnelLength - 1] : walls[wallIdx];
+    }
+
+    void SpawnEnemy()
+    {
+        if(Random.Range(0, spawnFrequency) == 0)
+        {
+
+        }
     }
 }

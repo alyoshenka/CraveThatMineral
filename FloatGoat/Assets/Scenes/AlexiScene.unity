@@ -297,9 +297,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1052017379}
-  tunnelLength: 10
   wall: {fileID: 1068210878283690, guid: 3dfbee0ebff320a408e6be56b2aa1c1a, type: 2}
+  tunnelLength: 10
   wallDepth: 1
+  tunnelWidth: 0
+  enemyPrefab: {fileID: 0}
+  spawnFrequency: 0
 --- !u!1 &1052017375
 GameObject:
   m_ObjectHideFlags: 0
