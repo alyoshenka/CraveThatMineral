@@ -8,7 +8,6 @@ public class Bomb : WallObject
 
     [Tooltip("Amount of damage done")]
     public float damage;
-    [Tooltip("dist to float")]
 
     public static Bomb[] bombs;
 
@@ -39,7 +38,7 @@ public class Bomb : WallObject
                 return b;
             }
         }
-        Debug.LogError("why is this null?");
+        Debug.LogError("No more objects in pool");
         return null;
     }
 
