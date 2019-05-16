@@ -286,8 +286,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wrapVal: -50
-  tunnelWidth: 10
-  wallDepth: 10
-  tunnelHeight: {x: 0, y: 10}
+  tunnelWidth: 25
+  wallDepth: 25
+  tunnelHeight: {x: 0, y: 15}
   potentialObjects:
-  - {fileID: 114349479723698458, guid: 0d09a1803268fa242a169ccab3fe9f15, type: 2}
+  - {fileID: 114608359283144934, guid: 050fbf59ae22b5f4aa7ce103a378adbd, type: 2}

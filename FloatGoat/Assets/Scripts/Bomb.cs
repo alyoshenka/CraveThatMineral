@@ -22,11 +22,6 @@ public class Bomb : WallObject {
         }
     }
 
-    // Update is called once per frame
-    void Update () {
-		
-	}
-
     public override WallObject Spawn(Transform parent, Vector3 pos)
     {
         foreach(Bomb b in bombs)
