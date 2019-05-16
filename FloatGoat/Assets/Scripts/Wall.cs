@@ -70,13 +70,27 @@ public class Wall : MonoBehaviour {
         Vector3 pos = new Vector3();
         foreach (WallObject i in potentialObjects)
         {
-            if ((int)Random.Range(0, i.chance) == 0)
+            if(i.maxObjects <= 0)
             {
-                pos.x = Random.Range(-tunnelWidth, tunnelWidth);
-                pos.y = Random.Range(tunnelHeight.x, tunnelHeight.y);
-                pos.z = Random.Range(-wallDepth, wallDepth);
-                objects.Add(i.Spawn(transform, pos));
+                if (Random.Range(0, i.chance) == 0)
+                {
+                    pos.x = Random.Range(-tunnelWidth, tunnelWidth);
+                    pos.y = Random.Range(tunnelHeight.x, tunnelHeight.y);
+                    pos.z = Random.Range(-wallDepth, wallDepth);
+                    objects.Add(i.Spawn(transform, pos));
+                }
             }
+            else
+            {
+                for (int j = 0; j < Random.Range(0, i.maxObjects); j++)
+                {
+                    pos.x = Random.Range(-tunnelWidth, tunnelWidth);
+                    pos.y = Random.Range(tunnelHeight.x, tunnelHeight.y);
+                    pos.z = Random.Range(-wallDepth, wallDepth);
+                    objects.Add(i.Spawn(transform, pos));
+                }
+            }
+            
         }
     }
 }
