@@ -66,6 +66,7 @@ public class Wall : MonoBehaviour {
         {
             if (Random.Range(0, i.chance) == 0)
             {
+                Debug.Log("obj init");
                 pos.x = Random.Range(-tunnelWidth, tunnelWidth);
                 pos.y = Random.Range(tunnelHeight.x, tunnelHeight.y);
                 pos.z = Random.Range(-wallDepth, wallDepth);
