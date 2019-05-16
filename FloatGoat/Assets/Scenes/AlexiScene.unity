@@ -17,7 +17,7 @@ RenderSettings:
   m_Fog: 0
   m_FogColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
   m_FogMode: 3
-  m_FogDensity: 0.01
+  m_FogDensity: 0.05
   m_LinearFogStart: 0
   m_LinearFogEnd: 300
   m_AmbientSkyColor: {r: 0.212, g: 0.227, b: 0.259, a: 1}
@@ -298,8 +298,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1052017379}
   wall: {fileID: 1068210878283690, guid: 3dfbee0ebff320a408e6be56b2aa1c1a, type: 2}
-  tunnelLength: 100
-  wallDepth: 1
+  tunnelLength: 10
+  wallDepth: 10
   speed: 10
 --- !u!1 &1052017375
 GameObject:
