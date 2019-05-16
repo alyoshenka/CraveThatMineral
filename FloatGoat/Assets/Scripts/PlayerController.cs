@@ -96,5 +96,10 @@ public class PlayerController : MonoBehaviour
         {
             fuel += other.GetComponent<Fuel>().fuel;
         }
+        if(other.tag == "InstaKill")
+        {
+            Debug.Log("Rip in kill");
+            //Go to game over screen
+        }
     }
 }

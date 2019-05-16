@@ -2,38 +2,48 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bomb : WallObject
+public class FlyingEnemy : WallObject
 {
     public static GameObject prefab;
 
     [Tooltip("Amount of damage done")]
     public float damage;
 
-    public static Bomb[] bombs;
+    Vector3 dir;
+    float speed;
+
+    public static FlyingEnemy[] flyers;
 
     public override void Init()
     {
-        bombs = new Bomb[Wall.walls.Length];
         GameObject b;
         prefab = gameObject;
-        for(int i = 0; i < bombs.Length; i++)
+        for (int i = 0; i < flyers.Length; i++)
         {
             b = Instantiate(prefab);
-            bombs[i] = b.GetComponent<Bomb>();
+            flyers[i] = b.GetComponent<FlyingEnemy>();
             b.SetActive(false);
         }
     }
 
+    // Update is called once per frame
+    void Update()
+    {
+        transform.Translate(dir * speed * Time.deltaTime);
+
+        //ADD BACK AND FORTH MOVEMENT
+    }
+
     public override WallObject Spawn(Transform parent, Vector3 pos)
     {
-        foreach(Bomb b in bombs)
+        foreach (FlyingEnemy b in flyers)
         {
             if (!b.gameObject.activeSelf)
             {
-                Debug.Log("new bomb @ " + pos);
-                b.gameObject.SetActive(true);
-                b.transform.parent = parent;
-                b.transform.localPosition = pos;
+                Debug.Log("new flyer @ " + pos);
+                gameObject.SetActive(true);
+                transform.parent = parent;
+                transform.localPosition = pos;
                 return b;
             }
         }
