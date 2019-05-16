@@ -297,9 +297,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1052017379}
-  wall: {fileID: 1068210878283690, guid: 3dfbee0ebff320a408e6be56b2aa1c1a, type: 2}
+  wall: {fileID: 1644636782701752, guid: ed0f023c5b8b5d54b89e2e8dbec00a1d, type: 2}
   tunnelLength: 10
-  wallDepth: 10
+  wallDepth: 50
   speed: 10
 --- !u!1 &1052017375
 GameObject:
@@ -380,7 +380,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1052017375}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 52.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
