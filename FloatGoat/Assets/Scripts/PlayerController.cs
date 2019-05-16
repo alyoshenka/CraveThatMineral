@@ -27,6 +27,12 @@ public class PlayerController : MonoBehaviour
     public float targetPassiveSpeedY;
     public float thrust;
 
+    public float elapsedTime;
+    public float score;
+
+    public float Fuel { get { return fuel; } }
+    public float FuelMax { get { return fuelMax; } }
+
     // Use this for initialization
     void Start()
     {
@@ -36,6 +42,9 @@ public class PlayerController : MonoBehaviour
         accelY = 0;
         speedX = 0;
         speedY = 0;
+
+        elapsedTime = 0f;
+        score = 0f;
     }
 
     // Update is called once per frame
@@ -88,6 +97,9 @@ public class PlayerController : MonoBehaviour
         speedY = Mathf.Clamp(speedY, speedYMin, speedYMax);
 
         transform.Translate(speedX * Time.deltaTime, speedY * Time.deltaTime, 0);
+
+        elapsedTime += Time.deltaTime;
+        score += Time.deltaTime;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -99,7 +111,21 @@ public class PlayerController : MonoBehaviour
         if(other.tag == "InstaKill")
         {
             Debug.Log("Rip in kill");
-            //Go to game over screen
+            GameManager.Die(); // freeze frame w/ instant replay
         }
+
+        WallObject isWallObj = other.GetComponent<WallObject>();
+        if(null != isWallObj) { isWallObj.ApplyToPlayer(this); }
+    }
+
+    public void HitFuel(float damage)
+    {
+        // particle effect (?)
+        // sound
+        // update ui
+
+        fuel += damage;
+        if(fuel <= 0) { Debug.Log("RIP"); }
+        fuel = Mathf.Clamp(fuel, 0, fuelMax);
     }
 }

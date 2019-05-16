@@ -8,12 +8,13 @@ public class Bomb : WallObject
 
     [Tooltip("Amount of damage done")]
     public float damage;
+    [Tooltip("dist to float")]
 
     public static Bomb[] bombs;
 
     public override void Init()
     {
-        bombs = new Bomb[Wall.walls.Length];
+        bombs = new Bomb[Wall.walls.Length * maxObjects];
         GameObject b;
         prefab = gameObject;
         for(int i = 0; i < bombs.Length; i++)
@@ -34,17 +35,21 @@ public class Bomb : WallObject
                 b.gameObject.SetActive(true);
                 b.transform.parent = parent;
                 b.transform.localPosition = pos;
+                b.transform.Rotate(new Vector3(0, Random.Range(-180, 180), 0));
                 return b;
             }
         }
-        Debug.LogError("Alexi warning");
+        Debug.LogError("why is this null?");
         return null;
     }
 
-    public override void ApplyToPlayer()
+    public override void ApplyToPlayer(PlayerController player)
     {
-        // health -= damage
-        // explode
+        player.HitFuel(-damage);
+        player.score -= damage;
+        // show ui flash
+        // play bomb sound
+        gameObject.SetActive(false);
     }
 
     public override void Recycle()
