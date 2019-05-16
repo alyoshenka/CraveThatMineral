@@ -6,7 +6,6 @@ public abstract class WallObject : MonoBehaviour
 {
     public float chance;
 
-    public static GameObject prefab;
     public WallObject[] objects;
 
     public abstract void Init();
