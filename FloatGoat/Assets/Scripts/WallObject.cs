@@ -15,6 +15,6 @@ public abstract class WallObject : MonoBehaviour
 
     public abstract void ApplyToPlayer();
 
-    public abstract void Spawn(Transform parent, Vector3 pos);
+    public abstract WallObject Spawn(Transform parent, Vector3 pos);
 }
 
