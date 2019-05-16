@@ -8,12 +8,13 @@ public class Bomb : WallObject
 
     [Tooltip("Amount of damage done")]
     public float damage;
+    [Tooltip("dist to float")]
 
     public static Bomb[] bombs;
 
     public override void Init()
     {
-        bombs = new Bomb[Wall.walls.Length];
+        bombs = new Bomb[Wall.walls.Length * maxObjects];
         GameObject b;
         prefab = gameObject;
         for(int i = 0; i < bombs.Length; i++)
