@@ -33,6 +33,7 @@ public class Bomb : WallObject {
         {
             if (!b.gameObject.activeSelf)
             {
+                Debug.Log("new bomb @ " + pos);
                 b.gameObject.SetActive(true);
                 b.transform.parent = parent;
                 b.transform.localPosition = pos;

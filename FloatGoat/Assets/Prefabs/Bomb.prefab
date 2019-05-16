@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb389da1e134f7e459068eb44a87db7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chance: 10
+  chance: 3
   objects: []
   damage: 10
 --- !u!135 &135310719358652450
