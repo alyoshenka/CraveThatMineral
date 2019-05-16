@@ -23,7 +23,6 @@ public class Wall : MonoBehaviour {
     public static float spawnZ;
     public static GameObject obj;
     public static Wall[] walls;
-    public static bool hasInit = false;
 
     List<WallObject> objects;
 
@@ -38,13 +37,8 @@ public class Wall : MonoBehaviour {
         wallDepth /= 2f;
 
         // instantiate all objects
-        if (!hasInit)
-        {
-            foreach (WallObject w in potentialObjects) { w.Init(); }
-            hasInit = true;
-        }
         
-    }
+	}
 	
 	// Update is called once per frame
 	void Update () {
@@ -70,12 +64,13 @@ public class Wall : MonoBehaviour {
         Vector3 pos = new Vector3();
         foreach (WallObject i in potentialObjects)
         {
-            if ((int)Random.Range(0, i.chance) == 0)
+            if (Random.Range(0, i.chance) == 0)
             {
+                Debug.Log("obj init");
                 pos.x = Random.Range(-tunnelWidth, tunnelWidth);
                 pos.y = Random.Range(tunnelHeight.x, tunnelHeight.y);
                 pos.z = Random.Range(-wallDepth, wallDepth);
-                objects.Add(i.Spawn(transform, pos));
+                i.Spawn(transform, pos);
             }
         }
     }

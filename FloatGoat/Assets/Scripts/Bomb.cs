@@ -11,7 +11,6 @@ public class Bomb : WallObject {
 
     public override void Init()
     {
-        bombs = new Bomb[Wall.walls.Length];
         GameObject b;
         prefab = gameObject;
         for(int i = 0; i < bombs.Length; i++)
@@ -27,20 +26,20 @@ public class Bomb : WallObject {
 		
 	}
 
-    public override WallObject Spawn(Transform parent, Vector3 pos)
+    public override void Spawn(Transform parent, Vector3 pos)
     {
         foreach(Bomb b in bombs)
         {
             if (!b.gameObject.activeSelf)
             {
-                b.gameObject.SetActive(true);
-                b.transform.parent = parent;
-                b.transform.localPosition = pos;
-                return b;
+                Debug.Log("new bomb @ " + pos);
+                gameObject.SetActive(true);
+                transform.parent = parent;
+                transform.localPosition = pos;
+                return;
             }
         }
-        Debug.LogError("Alexi warning");
-        return null;
+
     }
 
     public override void ApplyToPlayer()
