@@ -291,3 +291,4 @@ MonoBehaviour:
   tunnelHeight: {x: 0, y: 15}
   potentialObjects:
   - {fileID: 114608359283144934, guid: 050fbf59ae22b5f4aa7ce103a378adbd, type: 2}
+  - {fileID: 114915432434802464, guid: ce4b472aff28d6944bcca87f996b1d66, type: 2}

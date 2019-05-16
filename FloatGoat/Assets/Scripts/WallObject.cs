@@ -9,8 +9,6 @@ public abstract class WallObject : MonoBehaviour
     [Tooltip("Max number of enemies on a wall ( <= 0 not eve wall has one")]
     public int maxObjects;
 
-    public WallObject[] objects;
-
     public abstract void Init();
 
     public abstract void Recycle();

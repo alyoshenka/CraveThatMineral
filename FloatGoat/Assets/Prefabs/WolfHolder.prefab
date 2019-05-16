@@ -68,7 +68,7 @@ Transform:
   m_GameObject: {fileID: 1544127671170630}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.87, z: -1.98}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
   m_Children:
   - {fileID: 4690113714063958}
   m_Father: {fileID: 0}
@@ -156,7 +156,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chance: 0
   maxObjects: 0
-  objects: []
   damage: 10
 --- !u!135 &135087557401602228
 SphereCollider:

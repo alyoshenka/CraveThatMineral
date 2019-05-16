@@ -124,7 +124,8 @@ public class PlayerController : MonoBehaviour
         // sound
         // update ui
 
-        fuel -= damage;
+        fuel += damage;
         if(fuel <= 0) { Debug.Log("RIP"); }
+        fuel = Mathf.Clamp(fuel, 0, fuelMax);
     }
 }

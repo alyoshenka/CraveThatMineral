@@ -124,4 +124,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82cf4894e77e3cb4c8af6ddbd5d407d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  chance: 1
+  maxObjects: 100
   fuel: 50

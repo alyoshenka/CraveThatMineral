@@ -34,16 +34,19 @@ public class Bomb : WallObject
                 b.gameObject.SetActive(true);
                 b.transform.parent = parent;
                 b.transform.localPosition = pos;
+                b.transform.Rotate(new Vector3(0, Random.Range(-180, 180), 0));
                 return b;
             }
         }
-        Debug.LogError("Alexi warning");
+        Debug.LogError("why is this null?");
         return null;
     }
 
     public override void ApplyToPlayer(PlayerController player)
     {
-        player.HitFuel(damage);
+        player.HitFuel(-damage);
+        player.score -= damage;
+        // show ui flash
         // play bomb sound
         gameObject.SetActive(false);
     }
