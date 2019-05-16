@@ -119,7 +119,7 @@ MonoBehaviour:
   accelX: 0
   accelY: 0
   speedX: 0
-  speedXMax: 5
+  speedXMax: 3
   speedXMin: -3
   speedY: 0
   speedYMax: 5
@@ -129,6 +129,8 @@ MonoBehaviour:
   gravity: 5
   targetPassiveSpeedY: -1.5
   thrust: 10
+  elapsedTime: 0
+  score: 0
 --- !u!135 &135352806569054346
 SphereCollider:
   m_ObjectHideFlags: 1
