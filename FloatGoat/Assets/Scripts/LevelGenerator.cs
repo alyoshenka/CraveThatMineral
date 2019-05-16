@@ -2,37 +2,38 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LevelGenerator : MonoBehaviour {
+public class LevelGenerator : MonoBehaviour
+{
 
+    [Tooltip("Player Game Object")]
     public Transform player;
-    public int tunnelLength;
+    [Tooltip("The base wall prefab")]
     public GameObject wall;
-    public float resetVal;
+    [Tooltip("The number of times the base wall prefab repeats")]
+    public int tunnelLength;
+    [Tooltip("Z dimension width - how far apart walls instantiate")]
+    public float wallDepth;
+    [Tooltip("Player (wall) speed")]
+    public float speed;
 
-    GameObject[] walls;
-    int wallIdx;
-    float currentWallZ;
-
-	// Use this for initialization
-	void Start () {
-        walls = new GameObject[tunnelLength];
-        wallIdx = 0;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-        if (player.position.z > currentWallZ + resetVal) { WrapWalls(); }
-	}
-
-    void WrapWalls()
+    // Use this for initialization
+    void Start()
     {
+        Wall.obj = wall;
+        Wall.walls = new Wall[tunnelLength];
 
+        // init walls
+        GameObject obj;
+        Vector3 pos = Vector3.zero;
+        for (int i = 0; i < tunnelLength; i++)
+        {
+            obj = Instantiate(wall, pos, Quaternion.identity);
+            Wall w = obj.GetComponent<Wall>();
+            w.Speed = speed;
+            Wall.walls[i] = w;
+            pos.z += wallDepth;
+        }
+
+        Wall.spawnZ = pos.z;
     }
-
-    GameObject WallPrev()
-    {
-        return wallIdx == 0 ? walls[tunnelLength - 1] : walls[wallIdx];
-    }
-
-
 }
