@@ -25,13 +25,13 @@ public class Wall : MonoBehaviour {
     public static Wall[] walls;
     public static bool hasInit = false;
 
-    List<WallObject> objects;
+    List<WallObject> childObjects;
 
     Vector3 newPos;
 
 	// Use this for initialization
 	void Start () {
-        objects = new List<WallObject>();
+        childObjects = new List<WallObject>();
         newPos = transform.position;
 
         tunnelWidth /= 2f;
@@ -59,9 +59,9 @@ public class Wall : MonoBehaviour {
         newPos.z = spawnZ;
         transform.position = newPos;
 
-        foreach(WallObject thing in objects) { thing.Recycle(); }
+        foreach(WallObject thing in childObjects) { thing.Recycle(); }
 
-        objects.Clear();
+        childObjects.Clear();
         SpawnObjects();
     }
 
@@ -77,7 +77,7 @@ public class Wall : MonoBehaviour {
                     pos.x = Random.Range(-tunnelWidth, tunnelWidth);
                     pos.y = Random.Range(tunnelHeight.x, tunnelHeight.y);
                     pos.z = Random.Range(-wallDepth, wallDepth);
-                    objects.Add(i.Spawn(transform, pos));
+                    childObjects.Add(i.Spawn(transform, pos));
                 }
             }
             else
@@ -87,7 +87,7 @@ public class Wall : MonoBehaviour {
                     pos.x = Random.Range(-tunnelWidth, tunnelWidth);
                     pos.y = Random.Range(tunnelHeight.x, tunnelHeight.y);
                     pos.z = Random.Range(-wallDepth, wallDepth);
-                    objects.Add(i.Spawn(transform, pos));
+                    childObjects.Add(i.Spawn(transform, pos));
                 }
             }
             
