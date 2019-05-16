@@ -15,7 +15,7 @@ public abstract class WallObject : MonoBehaviour
 
     public abstract void Recycle();
 
-    public abstract void ApplyToPlayer();
+    public abstract void ApplyToPlayer(PlayerController player);
 
     public abstract WallObject Spawn(Transform parent, Vector3 pos);
 }

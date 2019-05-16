@@ -41,7 +41,7 @@ public class Bomb : WallObject
         return null;
     }
 
-    public override void ApplyToPlayer()
+    public override void ApplyToPlayer(PlayerController player)
     {
         // health -= damage
         // explode
