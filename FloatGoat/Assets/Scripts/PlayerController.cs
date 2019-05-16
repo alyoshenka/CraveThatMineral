@@ -9,8 +9,8 @@ public class PlayerController : MonoBehaviour
     public float fuelLossRate;
     public float fuelRiseConsumption;
 
-    public float accelX;
-    public float accelY;
+    [SerializeField] float accelX;
+    [SerializeField] float accelY;
 
     [SerializeField] float speedX;
     public float speedXMax;
@@ -20,11 +20,20 @@ public class PlayerController : MonoBehaviour
     public float speedYMax;
     public float speedYMin;
 
+    public float horizontalAccelMult;
+    public float horizontalDragMult;
+
+    public float gravity;
+    public float targetPassiveSpeedY;
+    public float thrust;
+
     // Use this for initialization
     void Start()
     {
         fuel = 75;
         fuelMax = 100;
+        accelX = 0;
+        accelY = 0;
         speedX = 0;
         speedY = 0;
     }
@@ -32,28 +41,39 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //accelY = -3;
-
         if (Input.GetAxis("Horizontal") != 0)
         {
-            accelX = Input.GetAxis("Horizontal") * 7;
+            accelX = Input.GetAxis("Horizontal") * horizontalAccelMult;
         }
         else
         {
-            accelX = -speedX * 1.5f;
+            accelX = -speedX * horizontalDragMult;
         }
 
-        if(fuel <= 0)
+        if (fuel <= 0)
         {
             Debug.Log("Out of fuel");
-            fuel = 0;
+            if (fuel < 0)
+            {
+                fuel = 0;
+            }
+            accelY = -gravity;
         }
         else
         {
-            fuel -= fuelLossRate * Time.deltaTime;
             if(Input.GetAxis("Vertical") > 0)
             {
                 fuel -= fuelRiseConsumption * Time.deltaTime;
+                accelY = -gravity + thrust;
+            }
+            else if(Input.GetAxis("Vertical") < 0)
+            {
+                accelY = -gravity;
+            }
+            else
+            {
+                fuel -= fuelLossRate * Time.deltaTime;
+                accelY = -speedY + targetPassiveSpeedY;
             }
         }
         if(fuel > fuelMax)
