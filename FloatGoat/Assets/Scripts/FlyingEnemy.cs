@@ -51,7 +51,7 @@ public class FlyingEnemy : WallObject
         return null;
     }
 
-    public override void ApplyToPlayer()
+    public override void ApplyToPlayer(PlayerController pc)
     {
         // health -= damage
         // explode
