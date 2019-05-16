@@ -43,8 +43,9 @@ public class Bomb : WallObject
 
     public override void ApplyToPlayer(PlayerController player)
     {
-        // health -= damage
-        // explode
+        player.HitFuel(damage);
+        // play bomb sound
+        gameObject.SetActive(false);
     }
 
     public override void Recycle()
