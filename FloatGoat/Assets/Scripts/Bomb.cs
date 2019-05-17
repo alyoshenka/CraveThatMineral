@@ -8,8 +8,37 @@ public class Bomb : WallObject
 
     [Tooltip("Amount of damage done")]
     public float damage;
+    [Tooltip("approach growl")]
+    public AudioClip growl;
+    [Tooltip("how close to goat for warning growl")]
+    public float approachDist;
+    [SerializeField]
+    [Tooltip("range of random sound timer")]
+    public Vector2 growlRange;
 
     public static Bomb[] bombs;
+
+    AudioSource audioSource;
+    bool warningDone;
+    float growlTimer;
+    float growlElapsed;
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+        warningDone = false;
+        audioSource.playOnAwake = false;
+    }
+
+    void Update()
+    {
+        if(!warningDone && transform.position.z <= approachDist)
+        {
+            warningDone = true;
+            audioSource.PlayOneShot(growl);
+        }
+
+        growlElapsed += Time.deltaTime;
+    }
 
     public override void Init()
     {
