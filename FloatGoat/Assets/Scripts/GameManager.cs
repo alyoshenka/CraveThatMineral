@@ -36,7 +36,7 @@ public class GameManager : MonoBehaviour {
 
     public static void Die()
     {
-        SceneManager.LoadScene("Death");
+        SceneManager.LoadScene("DeathScene");
     }
 
     public void StartGame()
