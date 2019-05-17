@@ -547,7 +547,7 @@ Transform:
   m_GameObject: {fileID: 1544127671170630}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.87, z: -1.98}
-  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
+  m_LocalScale: {x: 0.04, y: 0.04, z: 0.04}
   m_Children:
   - {fileID: 4621093558946854}
   m_Father: {fileID: 0}
@@ -864,8 +864,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb389da1e134f7e459068eb44a87db7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chance: 10
-  maxObjects: 2
+  chance: 20
+  maxObjects: 5
   damage: 10
   growl: {fileID: 8300000, guid: 37a5682e0801389429e24f66626067b0, type: 3}
   approachDist: 20

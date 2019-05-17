@@ -38,8 +38,7 @@ public class PlayerController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        fuel = 75;
-        fuelMax = 100;
+        fuel = fuelMax;
         accelX = 0;
         accelY = 0;
         speedX = 0;

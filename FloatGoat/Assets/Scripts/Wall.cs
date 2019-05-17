@@ -48,8 +48,8 @@ public class Wall : MonoBehaviour {
             hasInit = true;
         }
        
-        foreach(GameObject fl in floors) { fl.SetActive(false); }
-        floors[Random.Range(0, floors.Count)].SetActive(true);
+        // foreach(GameObject fl in floors) { fl.SetActive(false); }
+        // floors[Random.Range(0, floors.Count)].SetActive(true);
     }
 	
 	// Update is called once per frame
@@ -70,10 +70,10 @@ public class Wall : MonoBehaviour {
         wallL.transform.Rotate(new Vector3(0, Random.Range(0, 3) * 90, 0));
         wallR.transform.Rotate(new Vector3(0, Random.Range(0, 3) * 90, 0));
 
-        foreach (GameObject fl in floors) { fl.SetActive(false); }
-        GameObject flo = floors[Random.Range(0, floors.Count)];
-        flo.SetActive(true);
-        flo.transform.Rotate(new Vector3(0, Random.Range(0, 3) * 90, 0));
+        // foreach (GameObject fl in floors) { fl.SetActive(false); }
+        // GameObject flo = floors[Random.Range(0, floors.Count)];
+        // flo.SetActive(true);
+        // flo.transform.Rotate(new Vector3(0, Random.Range(0, 3) * 90, 0));
 
         childObjects.Clear();
         SpawnObjects();
