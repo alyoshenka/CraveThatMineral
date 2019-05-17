@@ -280,6 +280,7 @@ MonoBehaviour:
   initialVolume: 1
   volRange: {x: 0, y: 0}
   pitchRange: {x: 0, y: 0}
+  volLerpIn: 0
 --- !u!82 &251670697
 AudioSource:
   m_ObjectHideFlags: 0

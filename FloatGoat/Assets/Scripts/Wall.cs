@@ -64,11 +64,7 @@ public class Wall : MonoBehaviour {
         foreach(WallObject thing in childObjects) { thing.Recycle(); }
 
         transform.GetChild(0).Rotate(new Vector3(0, Random.Range(0, 3) * 90, 0));
-        transform.GetChild(1).Rotate(new Vector3(0, Random.Range(0, 3) * 90, 0));
-
-        Vector3 newScale = origScale;
-        newScale.y = Random.Range(origScale.y - heightScaleVariance, origScale.y + heightScaleVariance);
-        transform.localScale = newScale;      
+        transform.GetChild(1).Rotate(new Vector3(0, Random.Range(0, 3) * 90, 0));    
 
         childObjects.Clear();
         SpawnObjects();

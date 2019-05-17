@@ -47,6 +47,10 @@ public class GameManager : MonoBehaviour {
 
     public void StartGame()
     {
-        SceneManager.LoadScene("AlexiScene");
+        SceneManager.LoadScene("AlexiTestScene");
+    }
+    public void LoadScene(string name)
+    {
+        SceneManager.LoadScene(name);
     }
 }
