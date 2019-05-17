@@ -18,26 +18,25 @@ public class Bomb : WallObject
 
     public static Bomb[] bombs;
 
-    AudioSource audioSource;
     bool warningDone;
-    float growlTimer;
-    float growlElapsed;
+    public static AudioSource currentSource;
+
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        currentSource = GetComponent<AudioSource>();
+        currentSource.playOnAwake = false;
         warningDone = false;
-        audioSource.playOnAwake = false;
     }
 
     void Update()
     {
-        if(!warningDone && transform.position.z <= approachDist)
+        Debug.Log(currentSource.isPlaying);
+        if (transform.position.z <= approachDist)
         {
+            currentSource.Stop();
             warningDone = true;
-            audioSource.PlayOneShot(growl);
+            currentSource.PlayOneShot(growl);
         }
-
-        growlElapsed += Time.deltaTime;
     }
 
     public override void Init()
@@ -59,7 +58,6 @@ public class Bomb : WallObject
         {
             if (!b.gameObject.activeSelf)
             {
-                Debug.Log("new bomb @ " + pos);
                 b.gameObject.SetActive(true);
                 b.transform.parent = parent;
                 b.transform.localPosition = pos;
@@ -83,7 +81,7 @@ public class Bomb : WallObject
     public override void Recycle()
     {
         // do things
-
+        warningDone = false;
         gameObject.SetActive(false);
     }
 }

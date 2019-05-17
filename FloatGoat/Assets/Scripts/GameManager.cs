@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour {
     [SerializeField]
     [Tooltip("pitch range, after initial")]
     Vector2 pitchRange;
+    public float volLerpIn;
 
     AudioSource audioS;
 
@@ -26,6 +27,7 @@ public class GameManager : MonoBehaviour {
 
     void Update()
     {
+        audioS.volume = Mathf.Lerp(0, initialVolume, Time.timeSinceLevelLoad / volLerpIn);
         if (!audioS.isPlaying)
         {
             audioS.volume = Random.Range(volRange.x, volRange.y);
