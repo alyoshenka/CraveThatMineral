@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/StartMenu.unity
+    guid: e2fc93c4517843b4fb82c63a410399ca
+  - enabled: 1
     path: Assets/Scenes/AlexiScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
