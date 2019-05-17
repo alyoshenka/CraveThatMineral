@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour {
 
     public AudioClip theme;
     [Range(0, 1)]
-    public float initialVolume;
+    public float initialVolume = 1f;
     [SerializeField]
     [Tooltip("volume range, after initial")]
     Vector2 volRange;
