@@ -458,6 +458,7 @@ MonoBehaviour:
   initialVolume: 1
   volRange: {x: 0.2, y: 0.2}
   pitchRange: {x: 0.5, y: 0.5}
+  volLerpIn: 0
 --- !u!82 &539403641
 AudioSource:
   m_ObjectHideFlags: 0
@@ -788,7 +789,7 @@ Prefab:
       objectReference: {fileID: 8300000, guid: 2e09798908b19924faa1e97896214bf7, type: 3}
     - target: {fileID: 4451398990027554, guid: 2a8bf4ab47043064bbbc687c1fd47fd7, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 176.1
+      value: 114
       objectReference: {fileID: 0}
     - target: {fileID: 4451398990027554, guid: 2a8bf4ab47043064bbbc687c1fd47fd7, type: 2}
       propertyPath: m_LocalPosition.z
@@ -807,17 +808,17 @@ Prefab:
     - target: {fileID: 114685026513275432, guid: 2a8bf4ab47043064bbbc687c1fd47fd7,
         type: 2}
       propertyPath: speedXMax
-      value: 12
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 114685026513275432, guid: 2a8bf4ab47043064bbbc687c1fd47fd7,
         type: 2}
       propertyPath: speedXMin
-      value: -12
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 114685026513275432, guid: 2a8bf4ab47043064bbbc687c1fd47fd7,
         type: 2}
       propertyPath: speedYMax
-      value: 10
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 114685026513275432, guid: 2a8bf4ab47043064bbbc687c1fd47fd7,
         type: 2}
@@ -832,7 +833,7 @@ Prefab:
     - target: {fileID: 114685026513275432, guid: 2a8bf4ab47043064bbbc687c1fd47fd7,
         type: 2}
       propertyPath: gravity
-      value: 10
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114685026513275432, guid: 2a8bf4ab47043064bbbc687c1fd47fd7,
         type: 2}
@@ -842,7 +843,7 @@ Prefab:
     - target: {fileID: 114685026513275432, guid: 2a8bf4ab47043064bbbc687c1fd47fd7,
         type: 2}
       propertyPath: speedYMin
-      value: -10
+      value: -15
       objectReference: {fileID: 0}
     - target: {fileID: 114685026513275432, guid: 2a8bf4ab47043064bbbc687c1fd47fd7,
         type: 2}
@@ -860,7 +861,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4451398990027554, guid: 2a8bf4ab47043064bbbc687c1fd47fd7, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a8bf4ab47043064bbbc687c1fd47fd7, type: 2}
