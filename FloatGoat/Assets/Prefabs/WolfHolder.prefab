@@ -880,8 +880,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 50
-  m_Center: {x: 29.23, y: 54.3, z: 2.87}
+  m_Radius: 60
+  m_Center: {x: -2.9, y: 3, z: 14.5}
 --- !u!137 &137382076144650226
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

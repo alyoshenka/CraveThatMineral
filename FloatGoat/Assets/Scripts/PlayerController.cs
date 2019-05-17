@@ -106,11 +106,8 @@ public class PlayerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Fuel")
-        {
-            fuel += other.GetComponent<Fuel>().fuel;
-        }
-        if(other.tag == "InstaKill")
+        Debug.Log("trigger");
+        if (other.tag == "InstaKill")
         {
             Debug.Log("Rip in kill");
             GameManager.Die(score); // freeze frame w/ instant replay
@@ -127,7 +124,7 @@ public class PlayerController : MonoBehaviour
         // update ui
 
         fuel += damage;
-        if(fuel <= 0) { Debug.Log("RIP"); }
+        if(fuel <= 0) { GameManager.Die(score); }
         fuel = Mathf.Clamp(fuel, 0, fuelMax);
 
         if(damage >= 0) { noise.PowerupSound(); }

@@ -26,7 +26,6 @@ public class Bomb : WallObject
         currentSource = GetComponent<AudioSource>();
         currentSource.playOnAwake = false;
         warningDone = false;
-        
     }
 
     void Update()
@@ -41,15 +40,19 @@ public class Bomb : WallObject
 
     public override void Init()
     {
-        bombs = new Bomb[Wall.walls.Length * maxObjects];
-        GameObject b;
-        prefab = gameObject;
-        for(int i = 0; i < bombs.Length; i++)
+        if(null == bombs)
         {
-            b = Instantiate(prefab);
-            bombs[i] = b.GetComponent<Bomb>();
-            b.SetActive(false);
+            bombs = new Bomb[Wall.walls.Length * maxObjects];
+            GameObject b;
+            prefab = gameObject;
+            for (int i = 0; i < bombs.Length; i++)
+            {
+                b = Instantiate(prefab);
+                bombs[i] = b.GetComponent<Bomb>();
+                b.SetActive(false);
+            }
         }
+       
     }
 
     public override WallObject Spawn(Transform parent, Vector3 pos)
@@ -73,8 +76,8 @@ public class Bomb : WallObject
     {
         player.HitFuel(-damage);
         player.score -= damage;
-        // show ui flash
-        // play bomb sound
+
+        player.gameObject.GetComponent<Rigidbody>().AddTorque(new Vector3(Random.Range(0, 1f),Random.Range(0, 1f), Random.Range(0, 1f)));
         gameObject.SetActive(false);
     }
 

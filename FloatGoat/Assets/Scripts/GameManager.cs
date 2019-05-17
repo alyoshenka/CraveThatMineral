@@ -27,7 +27,8 @@ public class GameManager : MonoBehaviour {
         audioS = GetComponent<AudioSource>();
         audioS.volume = initialVolume;
         audioS.PlayOneShot(theme);
-        if (null != scoreTxt) { scoreTxt.text = (int)(GameObject.FindGameObjectWithTag("Carryover").GetComponent<Carryover>().playerScore) + ""; }
+        try { scoreTxt.text = (int)(GameObject.FindGameObjectWithTag("Carryover").GetComponent<Carryover>().playerScore) + ""; }
+        catch { }
     }
 
     void Update()

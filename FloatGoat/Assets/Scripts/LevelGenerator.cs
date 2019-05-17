@@ -17,7 +17,7 @@ public class LevelGenerator : MonoBehaviour
     public float speed;
 
     // Use this for initialization
-    void Start()
+    void Awake()
     {
         Wall.obj = wallParent;
         Wall.walls = new Wall[tunnelLength];
