@@ -68152,7 +68152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3288fda055fe8649894e82123172136, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wrapVal: -100
+  wrapVal: -300
   tunnelWidth: {x: 15, y: -55}
   wallDepth: 25
   tunnelHeight: {x: 5, y: 20}
