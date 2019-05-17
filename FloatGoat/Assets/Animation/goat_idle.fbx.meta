@@ -1,0 +1,169 @@
+fileFormatVersion: 2
+guid: d8321e22fd4d2364c8f61552f7b89f26
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: ffd1Base
+    100002: ffd1Lattice
+    100004: Front_L
+    100006: front_L
+    100008: front_L_END
+    100010: Front_R
+    100012: front_R
+    100014: front_R_END
+    100016: //RootNode
+    100018: Head
+    100020: head
+    100022: head_END
+    100024: pCube6
+    100026: Rear_L
+    100028: rear_L
+    100030: rear_L_END
+    100032: Rear_R
+    100034: rear_R
+    100036: rear_R_END
+    100038: Root
+    100040: root
+    100042: Tail
+    100044: tail
+    100046: tail_END
+    400000: ffd1Base
+    400002: ffd1Lattice
+    400004: Front_L
+    400006: front_L
+    400008: front_L_END
+    400010: Front_R
+    400012: front_R
+    400014: front_R_END
+    400016: //RootNode
+    400018: Head
+    400020: head
+    400022: head_END
+    400024: pCube6
+    400026: Rear_L
+    400028: rear_L
+    400030: rear_L_END
+    400032: Rear_R
+    400034: rear_R
+    400036: rear_R_END
+    400038: Root
+    400040: root
+    400042: Tail
+    400044: tail
+    400046: tail_END
+    2100000: lambert1
+    4300000: pCube6
+    7400000: goat_idle
+    9500000: //RootNode
+    13700000: pCube6
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 0
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: goat_idle
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 30
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
