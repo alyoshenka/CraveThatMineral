@@ -9,14 +9,8 @@ public class GameManager : MonoBehaviour {
     public AudioClip theme;
     [Range(0, 1)]
     public float initialVolume = 1f;
-    [SerializeField]
-    [Tooltip("volume range, after initial")]
-    Vector2 volRange;
-    [SerializeField]
-    [Tooltip("pitch range, after initial")]
     Vector2 pitchRange;
     public float volLerpIn;
-    [Tooltip("(value (percent), pitch)")]
 
     public Text scoreTxt;
 
@@ -34,14 +28,6 @@ public class GameManager : MonoBehaviour {
     void Update()
     {
         audioS.volume = Mathf.Lerp(0, initialVolume, Time.timeSinceLevelLoad / volLerpIn);
-        if (!audioS.isPlaying)
-        {
-            audioS.volume = Random.Range(volRange.x, volRange.y);
-            audioS.pitch = Random.Range(pitchRange.x, pitchRange.y);
-            audioS.PlayOneShot(theme);
-        }
-
-
     }
 
     public static void Die(float score)

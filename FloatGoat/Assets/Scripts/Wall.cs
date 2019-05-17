@@ -6,8 +6,9 @@ public class Wall : MonoBehaviour {
 
     [Tooltip("How far wall must be behind player to recycle")]
     public float wrapVal;
+    [SerializeField]
     [Tooltip("The width for obstacles to spawn between")]
-    public float tunnelWidth;
+    public Vector2 tunnelWidth;
     [Tooltip("The depth for obstacles to spawn between")]
     public float wallDepth;
     [Tooltip("The height range for obstacles to spawn between")]
@@ -47,9 +48,9 @@ public class Wall : MonoBehaviour {
             foreach (WallObject w in potentialObjects) { w.Init(); }
             hasInit = true;
         }
-       
-        // foreach(GameObject fl in floors) { fl.SetActive(false); }
-        // floors[Random.Range(0, floors.Count)].SetActive(true);
+
+        foreach (GameObject fl in floors) { fl.SetActive(false); }
+        floors[Random.Range(0, floors.Count)].SetActive(true);
     }
 	
 	// Update is called once per frame
@@ -70,10 +71,8 @@ public class Wall : MonoBehaviour {
         wallL.transform.Rotate(new Vector3(0, Random.Range(0, 3) * 90, 0));
         wallR.transform.Rotate(new Vector3(0, Random.Range(0, 3) * 90, 0));
 
-        // foreach (GameObject fl in floors) { fl.SetActive(false); }
-        // GameObject flo = floors[Random.Range(0, floors.Count)];
-        // flo.SetActive(true);
-        // flo.transform.Rotate(new Vector3(0, Random.Range(0, 3) * 90, 0));
+        foreach (GameObject fl in floors) { fl.SetActive(false); }
+        floors[Random.Range(0, floors.Count)].SetActive(true);
 
         childObjects.Clear();
         SpawnObjects();
@@ -88,7 +87,7 @@ public class Wall : MonoBehaviour {
             {
                 if (Random.Range(0, i.chance) == 0)
                 {
-                    pos.x = Random.Range(-tunnelWidth, tunnelWidth);
+                    pos.x = Random.Range(tunnelWidth.x, tunnelWidth.y);
                     pos.y = Random.Range(tunnelHeight.x, tunnelHeight.y);
                     pos.z = Random.Range(-wallDepth, wallDepth);
                     childObjects.Add(i.Spawn(transform, pos));
@@ -98,7 +97,7 @@ public class Wall : MonoBehaviour {
             {
                 for (int j = 0; j < Random.Range(0, i.maxObjects); j++)
                 {
-                    pos.x = Random.Range(-tunnelWidth, tunnelWidth);
+                    pos.x = Random.Range(tunnelWidth.x, tunnelWidth.y);
                     pos.y = Random.Range(tunnelHeight.x, tunnelHeight.y);
                     pos.z = Random.Range(-wallDepth, wallDepth);
                     childObjects.Add(i.Spawn(transform, pos));

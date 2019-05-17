@@ -25,7 +25,6 @@ public class Bomb : WallObject
     {
         currentSource = GetComponent<AudioSource>();
         currentSource.playOnAwake = false;
-        warningDone = false;
     }
 
     void Update()
@@ -48,7 +47,9 @@ public class Bomb : WallObject
             for (int i = 0; i < bombs.Length; i++)
             {
                 b = Instantiate(prefab);
-                bombs[i] = b.GetComponent<Bomb>();
+                Bomb bom = b.GetComponent<Bomb>();
+                bombs[i] = bom;
+                bom.recycle = true;
                 b.SetActive(false);
             }
         }
@@ -59,12 +60,13 @@ public class Bomb : WallObject
     {
         foreach(Bomb b in bombs)
         {
-            if (!b.gameObject.activeSelf)
+            if (b.recycle)
             {
                 b.gameObject.SetActive(true);
                 b.transform.parent = parent;
                 b.transform.localPosition = pos;
                 b.transform.Rotate(new Vector3(0, Random.Range(-180, 180), 0));
+                b.recycle = false;
                 return b;
             }
         }
@@ -77,14 +79,14 @@ public class Bomb : WallObject
         player.HitFuel(-damage);
         player.score -= damage;
 
-        player.gameObject.GetComponent<Rigidbody>().AddTorque(new Vector3(Random.Range(0, 1f),Random.Range(0, 1f), Random.Range(0, 1f)));
-        gameObject.SetActive(false);
+        Recycle();
     }
 
     public override void Recycle()
     {
         // do things
         warningDone = false;
-        gameObject.SetActive(false);
+        // gameObject.SetActive(false);
+        recycle = true;
     }
 }

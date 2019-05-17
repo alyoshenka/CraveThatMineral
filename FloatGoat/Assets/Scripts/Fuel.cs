@@ -34,7 +34,9 @@ public class Fuel : WallObject
         for (int i = 0; i < fuels.Length; i++)
         {
             b = Instantiate(prefab);
-            fuels[i] = b.GetComponent<Fuel>();
+            Fuel ful = b.GetComponent<Fuel>();
+            fuels[i] = ful;
+            ful.recycle = true;
             b.SetActive(false);
         }
     }
@@ -43,11 +45,12 @@ public class Fuel : WallObject
     {
         foreach (Fuel f in fuels)
         {
-            if (!f.gameObject.activeSelf)
+            if (f.recycle)
             {
                 f.gameObject.SetActive(true);
                 f.transform.parent = parent;
                 f.transform.localPosition = pos;
+                f.recycle = false;
                 return f;
             }
         }
@@ -64,6 +67,6 @@ public class Fuel : WallObject
 
     public override void Recycle()
     {
-        gameObject.SetActive(false);
+        recycle = true;
     }
 }
