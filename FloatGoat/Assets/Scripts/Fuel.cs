@@ -45,7 +45,6 @@ public class Fuel : WallObject
         {
             if (!f.gameObject.activeSelf)
             {
-                Debug.Log("new bomb @ " + pos);
                 f.gameObject.SetActive(true);
                 f.transform.parent = parent;
                 f.transform.localPosition = pos;

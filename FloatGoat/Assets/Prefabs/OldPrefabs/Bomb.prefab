@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chance: 3
-  objects: []
+  maxObjects: 0
   damage: 10
 --- !u!135 &135310719358652450
 SphereCollider:
