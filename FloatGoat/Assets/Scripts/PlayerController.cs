@@ -30,8 +30,10 @@ public class PlayerController : MonoBehaviour
     public float elapsedTime;
     public float score;
 
+    // Alexi's vars
     public float Fuel { get { return fuel; } }
     public float FuelMax { get { return fuelMax; } }
+    GoatAudioMgr noise;
 
     // Use this for initialization
     void Start()
@@ -45,6 +47,7 @@ public class PlayerController : MonoBehaviour
 
         elapsedTime = 0f;
         score = 0f;
+        noise = GetComponent<GoatAudioMgr>();
     }
 
     // Update is called once per frame
@@ -127,5 +130,8 @@ public class PlayerController : MonoBehaviour
         fuel += damage;
         if(fuel <= 0) { Debug.Log("RIP"); }
         fuel = Mathf.Clamp(fuel, 0, fuelMax);
+
+        if(damage >= 0) { noise.PowerupSound(); }
+        else { noise.DamageSound(); }
     }
 }

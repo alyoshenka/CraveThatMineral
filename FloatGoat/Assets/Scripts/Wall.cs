@@ -13,6 +13,8 @@ public class Wall : MonoBehaviour {
     [Tooltip("The height range for obstacles to spawn between")]
     [SerializeField]
     public Vector2 tunnelHeight;
+    [Tooltip("The variance in height")]
+    public float heightScaleVariance;
 
     [Header("Objects")]
     [Tooltip("Objects a wall can have")]
@@ -25,13 +27,13 @@ public class Wall : MonoBehaviour {
     public static Wall[] walls;
     public static bool hasInit = false;
 
-    List<WallObject> objects;
-
+    List<WallObject> childObjects;
     Vector3 newPos;
+    Vector3 origScale;
 
 	// Use this for initialization
 	void Start () {
-        objects = new List<WallObject>();
+        childObjects = new List<WallObject>();
         newPos = transform.position;
 
         tunnelWidth /= 2f;
@@ -43,7 +45,7 @@ public class Wall : MonoBehaviour {
             foreach (WallObject w in potentialObjects) { w.Init(); }
             hasInit = true;
         }
-        
+        origScale = transform.localScale;
     }
 	
 	// Update is called once per frame
@@ -59,9 +61,16 @@ public class Wall : MonoBehaviour {
         newPos.z = spawnZ;
         transform.position = newPos;
 
-        foreach(WallObject thing in objects) { thing.Recycle(); }
+        foreach(WallObject thing in childObjects) { thing.Recycle(); }
 
-        objects.Clear();
+        transform.GetChild(0).Rotate(new Vector3(0, Random.Range(0, 3) * 90, 0));
+        transform.GetChild(1).Rotate(new Vector3(0, Random.Range(0, 3) * 90, 0));
+
+        Vector3 newScale = origScale;
+        newScale.y = Random.Range(origScale.y - heightScaleVariance, origScale.y + heightScaleVariance);
+        transform.localScale = newScale;      
+
+        childObjects.Clear();
         SpawnObjects();
     }
 
@@ -77,7 +86,7 @@ public class Wall : MonoBehaviour {
                     pos.x = Random.Range(-tunnelWidth, tunnelWidth);
                     pos.y = Random.Range(tunnelHeight.x, tunnelHeight.y);
                     pos.z = Random.Range(-wallDepth, wallDepth);
-                    objects.Add(i.Spawn(transform, pos));
+                    childObjects.Add(i.Spawn(transform, pos));
                 }
             }
             else
@@ -87,7 +96,7 @@ public class Wall : MonoBehaviour {
                     pos.x = Random.Range(-tunnelWidth, tunnelWidth);
                     pos.y = Random.Range(tunnelHeight.x, tunnelHeight.y);
                     pos.z = Random.Range(-wallDepth, wallDepth);
-                    objects.Add(i.Spawn(transform, pos));
+                    childObjects.Add(i.Spawn(transform, pos));
                 }
             }
             
