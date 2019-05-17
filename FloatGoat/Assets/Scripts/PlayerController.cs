@@ -114,7 +114,7 @@ public class PlayerController : MonoBehaviour
         if(other.tag == "InstaKill")
         {
             Debug.Log("Rip in kill");
-            GameManager.Die(); // freeze frame w/ instant replay
+            GameManager.Die(score); // freeze frame w/ instant replay
         }
 
         WallObject isWallObj = other.GetComponent<WallObject>();
@@ -134,4 +134,5 @@ public class PlayerController : MonoBehaviour
         if(damage >= 0) { noise.PowerupSound(); }
         else { noise.DamageSound(); }
     }
+
 }

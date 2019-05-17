@@ -26,6 +26,7 @@ public class Bomb : WallObject
         currentSource = GetComponent<AudioSource>();
         currentSource.playOnAwake = false;
         warningDone = false;
+        
     }
 
     void Update()

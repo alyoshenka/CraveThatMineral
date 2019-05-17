@@ -16,6 +16,10 @@ public class Wall : MonoBehaviour {
     [Tooltip("The variance in height")]
     public float heightScaleVariance;
 
+    public GameObject wallL;
+    public GameObject wallR;
+    public List<GameObject> floors;
+
     [Header("Objects")]
     [Tooltip("Objects a wall can have")]
     public List<WallObject> potentialObjects;
@@ -45,7 +49,9 @@ public class Wall : MonoBehaviour {
             foreach (WallObject w in potentialObjects) { w.Init(); }
             hasInit = true;
         }
-        origScale = transform.localScale;
+       
+        foreach(GameObject fl in floors) { fl.SetActive(false); }
+        floors[Random.Range(0, floors.Count)].SetActive(true);
     }
 	
 	// Update is called once per frame
@@ -63,12 +69,13 @@ public class Wall : MonoBehaviour {
 
         foreach(WallObject thing in childObjects) { thing.Recycle(); }
 
-        transform.GetChild(0).Rotate(new Vector3(0, Random.Range(0, 3) * 90, 0));
-        transform.GetChild(1).Rotate(new Vector3(0, Random.Range(0, 3) * 90, 0));
+        wallL.transform.Rotate(new Vector3(0, Random.Range(0, 3) * 90, 0));
+        wallR.transform.Rotate(new Vector3(0, Random.Range(0, 3) * 90, 0));
 
-        Vector3 newScale = origScale;
-        newScale.y = Random.Range(origScale.y - heightScaleVariance, origScale.y + heightScaleVariance);
-        transform.localScale = newScale;      
+        foreach (GameObject fl in floors) { fl.SetActive(false); }
+        GameObject flo = floors[Random.Range(0, floors.Count)];
+        flo.SetActive(true);
+        flo.transform.Rotate(new Vector3(0, Random.Range(0, 3) * 90, 0));
 
         childObjects.Clear();
         SpawnObjects();
