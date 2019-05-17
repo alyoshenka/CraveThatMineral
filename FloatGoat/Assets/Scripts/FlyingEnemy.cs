@@ -10,7 +10,6 @@ public class FlyingEnemy : WallObject
     public float damage;
 
     Vector3 dir;
-    float speed;
 
     public static FlyingEnemy[] flyers;
 
@@ -29,7 +28,7 @@ public class FlyingEnemy : WallObject
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(dir * speed * Time.deltaTime);
+        // transform.Translate(dir * speed * Time.deltaTime);
 
         //ADD BACK AND FORTH MOVEMENT
     }

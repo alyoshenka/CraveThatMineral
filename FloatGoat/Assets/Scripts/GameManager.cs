@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour {
     [Tooltip("pitch range, after initial")]
     Vector2 pitchRange;
     public float volLerpIn;
+    [Tooltip("(value (percent), pitch)")]
+    
 
     AudioSource audioS;
 
@@ -34,15 +36,22 @@ public class GameManager : MonoBehaviour {
             audioS.pitch = Random.Range(pitchRange.x, pitchRange.y);
             audioS.PlayOneShot(theme);
         }
+
+
     }
 
-    public static void Die()
+    public static void Die(float score)
     {
+        GameObject.FindGameObjectWithTag("Carryover").GetComponent<Carryover>().playerScore = score;
         SceneManager.LoadScene("DeathScene");
     }
 
     public void StartGame()
     {
-        SceneManager.LoadScene("AlexiScene");
+        SceneManager.LoadScene("AlexiTestScene");
+    }
+    public void LoadScene(string name)
+    {
+        SceneManager.LoadScene(name);
     }
 }
