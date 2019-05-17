@@ -18,7 +18,7 @@ public class UIController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        fuel.text = "Health: " + player.Fuel + " / " + player.FuelMax;
+        fuel.text = "Fuel: " + (int)player.Fuel + " / " + player.FuelMax;
         score.text = (int)player.score + " points";
         timer.text = (int)player.elapsedTime + " seconds";
 	}

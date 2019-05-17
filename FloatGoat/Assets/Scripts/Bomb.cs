@@ -29,12 +29,12 @@ public class Bomb : WallObject
 
     void Update()
     {
-        if (transform.position.z <= approachDist)
-        {
-            currentSource.Stop();
-            warningDone = true;
-            currentSource.PlayOneShot(growl);
-        }
+        //if (transform.position.z <= approachDist)
+        //{
+        //    currentSource.Stop();
+        //    warningDone = true;
+        //    currentSource.PlayOneShot(growl);
+        //}
     }
 
     public override void Init()
@@ -50,7 +50,6 @@ public class Bomb : WallObject
                 Bomb bom = b.GetComponent<Bomb>();
                 bombs[i] = bom;
                 bom.recycle = true;
-                b.SetActive(false);
             }
         }
        
@@ -62,7 +61,6 @@ public class Bomb : WallObject
         {
             if (b.recycle)
             {
-                b.gameObject.SetActive(true);
                 b.transform.parent = parent;
                 b.transform.localPosition = pos;
                 b.transform.Rotate(new Vector3(0, Random.Range(-180, 180), 0));
@@ -86,7 +84,6 @@ public class Bomb : WallObject
     {
         // do things
         warningDone = false;
-        // gameObject.SetActive(false);
         recycle = true;
     }
 }

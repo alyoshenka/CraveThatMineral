@@ -278,8 +278,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   theme: {fileID: 8300000, guid: 4506c813c6e93b744b659fa10c9d62dc, type: 3}
   initialVolume: 1
-  volRange: {x: 0, y: 0}
-  pitchRange: {x: 0, y: 0}
   volLerpIn: 0
   scoreTxt: {fileID: 0}
 --- !u!82 &251670697

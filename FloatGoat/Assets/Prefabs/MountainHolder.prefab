@@ -68153,7 +68153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wrapVal: -100
-  tunnelWidth: {x: 15, y: -30}
+  tunnelWidth: {x: 15, y: -55}
   wallDepth: 25
   tunnelHeight: {x: 5, y: 20}
   wallL: {fileID: 1396871522566576}

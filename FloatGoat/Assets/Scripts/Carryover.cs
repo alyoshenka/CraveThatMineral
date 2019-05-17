@@ -9,4 +9,9 @@ public class Carryover : MonoBehaviour {
 	void Start () {
         DontDestroyOnLoad(this);
 	}
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape)) { Application.Quit(); }
+    }
 }
