@@ -268,15 +268,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: bcff90f053eb660479743fb9e6ee2b57, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bcff90f053eb660479743fb9e6ee2b57, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 18.2
+      value: 25.8
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bcff90f053eb660479743fb9e6ee2b57, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.57
+      value: 65.2
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bcff90f053eb660479743fb9e6ee2b57, type: 3}
       propertyPath: m_LocalRotation.x
@@ -338,15 +338,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400010, guid: e080977a8c770a040806337c34761f84, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -1.42
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: e080977a8c770a040806337c34761f84, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 19.02
+      value: 24.49
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: e080977a8c770a040806337c34761f84, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 54.25
       objectReference: {fileID: 0}
     - target: {fileID: 400010, guid: e080977a8c770a040806337c34761f84, type: 3}
       propertyPath: m_LocalRotation.x
@@ -631,13 +631,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1660234142}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.00090781355, y: 0.99846584, z: -0.05263846, w: -0.017162224}
+  m_LocalPosition: {x: 7.25, y: 31.35, z: 79.41}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 6.032, y: 181.98, z: 0.209}
 --- !u!1001 &1742682603
 Prefab:
   m_ObjectHideFlags: 0
