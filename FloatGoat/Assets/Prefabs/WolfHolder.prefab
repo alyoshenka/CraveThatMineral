@@ -547,7 +547,7 @@ Transform:
   m_GameObject: {fileID: 1544127671170630}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.87, z: -1.98}
-  m_LocalScale: {x: 0.05, y: 0.05, z: 0.05}
+  m_LocalScale: {x: 0.02, y: 0.02, z: 0.02}
   m_Children:
   - {fileID: 4621093558946854}
   m_Father: {fileID: 0}
@@ -870,9 +870,6 @@ MonoBehaviour:
   growl: {fileID: 8300000, guid: 37a5682e0801389429e24f66626067b0, type: 3}
   approachDist: 20
   growlRange: {x: 5, y: 15}
-  wallL: {fileID: 0}
-  wallR: {fileID: 0}
-  floors: []
 --- !u!135 &135087557401602228
 SphereCollider:
   m_ObjectHideFlags: 1

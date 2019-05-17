@@ -31,7 +31,6 @@ public class Bomb : WallObject
 
     void Update()
     {
-        Debug.Log(currentSource.isPlaying);
         if (transform.position.z <= approachDist)
         {
             currentSource.Stop();
