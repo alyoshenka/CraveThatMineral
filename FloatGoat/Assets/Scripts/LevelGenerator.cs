@@ -25,6 +25,7 @@ public class LevelGenerator : MonoBehaviour
         // init walls
         GameObject obj;
         Vector3 pos = Vector3.zero;
+        pos.z = -wallDepth;
         for (int i = 0; i < tunnelLength; i++)
         {
             obj = Instantiate(wall, pos, Quaternion.identity);
