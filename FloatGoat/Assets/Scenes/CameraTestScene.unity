@@ -205,9 +205,9 @@ RectTransform:
   m_Father: {fileID: 776593605}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 89.5, y: -37.399994}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -180.5, y: 146.6}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &83662513
@@ -280,9 +280,9 @@ RectTransform:
   m_Father: {fileID: 776593605}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 89.5, y: -73}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -180.5, y: 111}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &111202277
@@ -451,9 +451,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   theme: {fileID: 8300000, guid: c68920c5c22304a47b53172ed98adfb3, type: 3}
   initialVolume: 1
-  volRange: {x: 0.5, y: 0.5}
-  pitchRange: {x: 0.9, y: 1.1}
-  volLerpIn: 5
+  volRange: {x: 0.2, y: 0.2}
+  pitchRange: {x: 0.5, y: 0.5}
 --- !u!82 &539403641
 AudioSource:
   m_ObjectHideFlags: 0
@@ -723,11 +722,69 @@ Prefab:
         type: 2}
       propertyPath: powerup
       value: 
-      objectReference: {fileID: 8300000, guid: 32f431f9d56f7fa4a98a74b4402d8887, type: 3}
-    - target: {fileID: 114017698050594450, guid: 2a8bf4ab47043064bbbc687c1fd47fd7,
+      objectReference: {fileID: 8300000, guid: 2e09798908b19924faa1e97896214bf7, type: 3}
+    - target: {fileID: 4451398990027554, guid: 2a8bf4ab47043064bbbc687c1fd47fd7, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 176.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4451398990027554, guid: 2a8bf4ab47043064bbbc687c1fd47fd7, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -477
+      objectReference: {fileID: 0}
+    - target: {fileID: 114685026513275432, guid: 2a8bf4ab47043064bbbc687c1fd47fd7,
         type: 2}
-      propertyPath: randomGoatNoise.x
+      propertyPath: accelX
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114685026513275432, guid: 2a8bf4ab47043064bbbc687c1fd47fd7,
+        type: 2}
+      propertyPath: accelY
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114685026513275432, guid: 2a8bf4ab47043064bbbc687c1fd47fd7,
+        type: 2}
+      propertyPath: speedXMax
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114685026513275432, guid: 2a8bf4ab47043064bbbc687c1fd47fd7,
+        type: 2}
+      propertyPath: speedXMin
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114685026513275432, guid: 2a8bf4ab47043064bbbc687c1fd47fd7,
+        type: 2}
+      propertyPath: speedYMax
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114685026513275432, guid: 2a8bf4ab47043064bbbc687c1fd47fd7,
+        type: 2}
+      propertyPath: horizontalAccelMult
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114685026513275432, guid: 2a8bf4ab47043064bbbc687c1fd47fd7,
+        type: 2}
+      propertyPath: horizontalDragMult
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114685026513275432, guid: 2a8bf4ab47043064bbbc687c1fd47fd7,
+        type: 2}
+      propertyPath: gravity
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114685026513275432, guid: 2a8bf4ab47043064bbbc687c1fd47fd7,
+        type: 2}
+      propertyPath: thrust
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 114685026513275432, guid: 2a8bf4ab47043064bbbc687c1fd47fd7,
+        type: 2}
+      propertyPath: speedYMin
+      value: -20
+      objectReference: {fileID: 0}
+    - target: {fileID: 114685026513275432, guid: 2a8bf4ab47043064bbbc687c1fd47fd7,
+        type: 2}
+      propertyPath: targetPassiveSpeedY
+      value: -1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a8bf4ab47043064bbbc687c1fd47fd7, type: 2}
@@ -762,9 +819,9 @@ RectTransform:
   m_Father: {fileID: 776593605}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 89.5, y: -108.7}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -180.5, y: 75.3}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1788000998
