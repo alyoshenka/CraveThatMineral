@@ -8,7 +8,7 @@ public class LevelGenerator : MonoBehaviour
     [Tooltip("Player Game Object")]
     public Transform player;
     [Tooltip("The base wall prefab")]
-    public GameObject wall;
+    public GameObject wallParent;
     [Tooltip("The number of times the base wall prefab repeats")]
     public int tunnelLength;
     [Tooltip("Z dimension width - how far apart walls instantiate")]
@@ -19,7 +19,7 @@ public class LevelGenerator : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        Wall.obj = wall;
+        Wall.obj = wallParent;
         Wall.walls = new Wall[tunnelLength];
 
         // init walls
@@ -28,7 +28,8 @@ public class LevelGenerator : MonoBehaviour
         pos.z = -wallDepth;
         for (int i = 0; i < tunnelLength; i++)
         {
-            obj = Instantiate(wall, pos, Quaternion.identity);
+            obj = Instantiate(wallParent, pos, Quaternion.identity);
+            
             Wall w = obj.GetComponent<Wall>();
             w.Speed = speed;
             Wall.walls[i] = w;
