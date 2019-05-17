@@ -2097,7 +2097,7 @@ Transform:
   m_GameObject: {fileID: 1990823848821186}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4974102366568376}
   - {fileID: 4134048587553170}
@@ -5866,6 +5866,10 @@ MonoBehaviour:
   wallDepth: 25
   tunnelHeight: {x: 0, y: 15}
   heightScaleVariance: 0.5
+  wallL: {fileID: 1872635024095672}
+  wallR: {fileID: 1643049510213146}
+  floors:
+  - {fileID: 1876463619262274}
   potentialObjects:
   - {fileID: 114608359283144934, guid: 050fbf59ae22b5f4aa7ce103a378adbd, type: 2}
   - {fileID: 114520865013833856, guid: 1de02a5ee940e1a4fb635aaab3aa58e2, type: 2}

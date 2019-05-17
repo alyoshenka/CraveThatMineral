@@ -40,8 +40,9 @@ public class GameManager : MonoBehaviour {
 
     }
 
-    public static void Die()
+    public static void Die(float score)
     {
+        GameObject.FindGameObjectWithTag("Carryover").GetComponent<Carryover>().playerScore = score;
         SceneManager.LoadScene("DeathScene");
     }
 

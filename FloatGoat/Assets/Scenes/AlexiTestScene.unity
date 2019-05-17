@@ -15,7 +15,7 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 1
-  m_FogColor: {r: 1, g: 0, b: 0, a: 1}
+  m_FogColor: {r: 0.4764151, g: 1, b: 0.98857236, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.01
   m_LinearFogStart: 0
@@ -433,10 +433,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073eed60f96ada34d926a28e318682a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  wallParent: {fileID: 0}
+  player: {fileID: 553813786}
+  wallParent: {fileID: 1990823848821186, guid: 4aeb8a4b109b2304eb5571a6c93ba16b, type: 2}
   tunnelLength: 10
-  wallDepth: 50
+  wallDepth: 48
   speed: 30
 --- !u!114 &539403640
 MonoBehaviour:
@@ -591,6 +591,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a8bf4ab47043064bbbc687c1fd47fd7, type: 2}
   m_IsPrefabAsset: 0
+--- !u!4 &553813786 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4925656705403984, guid: 2a8bf4ab47043064bbbc687c1fd47fd7,
+    type: 2}
+  m_PrefabInternal: {fileID: 553813785}
 --- !u!1 &776593601
 GameObject:
   m_ObjectHideFlags: 0
@@ -808,6 +813,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 29.899994, y: -25.200012}
+  m_AnchoredPosition: {x: 29.900024, y: -25.200012}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}

@@ -16,10 +16,6 @@ public class Bomb : WallObject
     [Tooltip("range of random sound timer")]
     public Vector2 growlRange;
 
-    public GameObject wallL;
-    public GameObject wallR;
-    public List<GameObject> floors;
-
     public static Bomb[] bombs;
 
     bool warningDone;
@@ -30,7 +26,7 @@ public class Bomb : WallObject
         currentSource = GetComponent<AudioSource>();
         currentSource.playOnAwake = false;
         warningDone = false;
-        floors[Random.Range(0, floors.Count)].SetActive(false);
+        
     }
 
     void Update()
@@ -64,11 +60,6 @@ public class Bomb : WallObject
             if (!b.gameObject.activeSelf)
             {
                 b.gameObject.SetActive(true);
-
-                foreach(GameObject fl in floors) { fl.SetActive(false); }
-                GameObject flo = floors[Random.Range(0, floors.Count)];
-                flo.transform.Rotate(new Vector3(0, Random.Range(-180, 180), 0));
-
                 b.transform.parent = parent;
                 b.transform.localPosition = pos;
                 b.transform.Rotate(new Vector3(0, Random.Range(-180, 180), 0));
