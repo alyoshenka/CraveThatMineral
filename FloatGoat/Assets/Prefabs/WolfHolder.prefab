@@ -254,7 +254,6 @@ MonoBehaviour:
   maxObjects: 2
   damage: 10
   growl: {fileID: 8300000, guid: 37a5682e0801389429e24f66626067b0, type: 3}
-  approachGoat: {fileID: 8300000, guid: 9d8a18de973cb3a44a04853b63e3885d, type: 3}
   approachDist: 20
   growlRange: {x: 5, y: 15}
 --- !u!135 &135087557401602228
