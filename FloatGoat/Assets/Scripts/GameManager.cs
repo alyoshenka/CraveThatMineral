@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour {
 
@@ -16,7 +17,8 @@ public class GameManager : MonoBehaviour {
     Vector2 pitchRange;
     public float volLerpIn;
     [Tooltip("(value (percent), pitch)")]
-    
+
+    public Text scoreTxt;
 
     AudioSource audioS;
 
@@ -25,6 +27,7 @@ public class GameManager : MonoBehaviour {
         audioS = GetComponent<AudioSource>();
         audioS.volume = initialVolume;
         audioS.PlayOneShot(theme);
+        if (null != scoreTxt) { scoreTxt.text = (int)(GameObject.FindGameObjectWithTag("Carryover").GetComponent<Carryover>().playerScore) + ""; }
     }
 
     void Update()
@@ -43,7 +46,7 @@ public class GameManager : MonoBehaviour {
     public static void Die(float score)
     {
         GameObject.FindGameObjectWithTag("Carryover").GetComponent<Carryover>().playerScore = score;
-        SceneManager.LoadScene("DeathScene");
+        SceneManager.LoadScene("EndScene");
     }
 
     public void StartGame()
