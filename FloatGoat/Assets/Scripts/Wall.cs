@@ -13,8 +13,6 @@ public class Wall : MonoBehaviour {
     [Tooltip("The height range for obstacles to spawn between")]
     [SerializeField]
     public Vector2 tunnelHeight;
-    [Tooltip("The variance in height")]
-    public float heightScaleVariance;
 
     public GameObject wallL;
     public GameObject wallR;
