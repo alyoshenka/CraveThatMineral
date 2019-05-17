@@ -250,7 +250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb389da1e134f7e459068eb44a87db7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chance: 2
+  chance: 10
   maxObjects: 2
   damage: 10
   growl: {fileID: 8300000, guid: 37a5682e0801389429e24f66626067b0, type: 3}

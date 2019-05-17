@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour {
     [Tooltip("pitch range, after initial")]
     Vector2 pitchRange;
     public float volLerpIn;
+    [Tooltip("(value (percent), pitch)")]
+    
 
     AudioSource audioS;
 
@@ -34,6 +36,8 @@ public class GameManager : MonoBehaviour {
             audioS.pitch = Random.Range(pitchRange.x, pitchRange.y);
             audioS.PlayOneShot(theme);
         }
+
+
     }
 
     public static void Die()
